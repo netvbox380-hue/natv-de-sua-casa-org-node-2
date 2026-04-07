@@ -1,0 +1,17 @@
+{
+  "name": "natv-de-sua-casa",
+  "version": "2.0.0",
+  "description": "Site NaTV de Sua Casa",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo \"NaTV pronto para Render\""
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "@netlify/blobs": "^8.1.0"
+  }
+}

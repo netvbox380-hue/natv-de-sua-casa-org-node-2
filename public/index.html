@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ===== GOOGLE ADS + ANALYTICS ===== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-987590909"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-987590909');
+    gtag('config', 'G-4L4PL12CWG');
+
+    const GOOGLE_ADS_WHATSAPP_SEND_TO = 'AW-987590909/yWZtCNz51ZccEP3h9dYD';
+
+    function normalizeWhatsAppUrl(url) {
+      try {
+        return new URL(url, window.location.origin).toString();
+      } catch {
+        return String(url || '');
+      }
+    }
+
+    function inferWhatsAppPlan(url) {
+      const value = decodeURIComponent(String(url || '')).toLowerCase();
+      if (value.includes('básico') || value.includes('basico')) return 'basico';
+      if (value.includes('completo')) return 'completo';
+      if (value.includes('trimestral')) return 'trimestral';
+      if (value.includes('semestral')) return 'semestral';
+      if (value.includes('anual')) return 'anual';
+      if (value.includes('teste grátis') || value.includes('teste gratis')) return 'teste_gratis';
+      if (value.includes('indicado')) return 'indicacao';
+      return 'geral';
+    }
+
+    function gtag_report_conversion(url, meta = {}) {
+      const targetUrl = normalizeWhatsAppUrl(url);
+      const plan = meta.plan || inferWhatsAppPlan(targetUrl);
+      const source = meta.source || 'site';
+      const locationName = meta.location || window.location.pathname || '/';
+      let opened = false;
+
+      const openTarget = () => {
+        if (opened || !targetUrl) return;
+        opened = true;
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+      };
+
+      gtag('event', 'generate_lead', {
+        currency: 'BRL',
+        value: 1,
+        method: 'WhatsApp',
+        event_category: 'engagement',
+        event_label: plan,
+        plan_name: plan,
+        contact_channel: 'whatsapp',
+        page_location: window.location.href,
+        page_path: locationName,
+        send_to: 'G-4L4PL12CWG'
+      });
+
+      gtag('event', 'click', {
+        event_category: 'whatsapp',
+        event_label: targetUrl,
+        link_url: targetUrl,
+        outbound: true,
+        plan_name: plan,
+        page_path: locationName,
+        source: source,
+        send_to: 'G-4L4PL12CWG'
+      });
+
+      gtag('event', 'conversion', {
+        'send_to': GOOGLE_ADS_WHATSAPP_SEND_TO,
+        'event_callback': openTarget
+      });
+
+      setTimeout(openTarget, 450);
+      return false;
+    }
+
+    function trackWhatsAppClick(url, meta = {}) {
+      return gtag_report_conversion(url, meta);
+    }
+  </script>
+  
+  <!-- ===== SEO: Meta Tags Básicas ===== -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NaTV de Sua Casa | TV por Internet, Filmes, Séries e Canais ao Vivo</title>
+  <meta name="description" content="NaTV de Sua Casa: TV por internet com canais ao vivo, filmes, séries e esportes. Funciona em Smart TV, TV Box e celular. Planos a partir de R$30/mês. Teste grátis no WhatsApp!"/>
+  <meta name="keywords" content="TV por internet, IPTV, canais ao vivo, filmes, séries, esportes, Smart TV, TV Box, celular, teste grátis, NaTV de Sua Casa, assistir TV online"/>
+  <meta name="author" content="NaTV de Sua Casa"/>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+  <link rel="canonical" href="https://natvdesuacasa.casa/"/>
+  
+  <!-- ===== SEO: Open Graph (Facebook, WhatsApp, etc.) ===== -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://natvdesuacasa.casa/"/>
+  <meta property="og:title" content="NaTV de Sua Casa | Streaming de TV, Filmes e Séries"/>
+  <meta property="og:description" content="O melhor streaming de TV, filmes e séries. Assista em Smart TV, TV Box ou celular. Planos a partir de R$30/mês. Teste grátis!"/>
+  <meta property="og:image" content="https://natvdesuacasa.casa/icons/icon-512x512.png"/>
+  <meta property="og:image:width" content="512"/>
+  <meta property="og:image:height" content="512"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="NaTV de Sua Casa"/>
+  
+  <!-- ===== SEO: Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:url" content="https://natvdesuacasa.casa/"/>
+  <meta name="twitter:title" content="NaTV de Sua Casa | Streaming de TV, Filmes e Séries"/>
+  <meta name="twitter:description" content="O melhor streaming de TV, filmes e séries. Assista em Smart TV, TV Box ou celular. Planos a partir de R$30/mês."/>
+  <meta name="twitter:image" content="https://natvdesuacasa.casa/icons/icon-512x512.png"/>
+  
+  <!-- ===== SEO: Dados Estruturados (Schema.org) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NaTV de Sua Casa",
+    "url": "https://natvdesuacasa.casa/",
+    "logo": "https://natvdesuacasa.casa/icons/icon-512x512.png",
+    "description": "Serviço de streaming de TV, filmes e séries em HD para Smart TV, TV Box e celular.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-83-99818-0866",
+      "contactType": "customer service",
+      "availableLanguage": "Portuguese"
+    },
+    "sameAs": [
+      "https://wa.me/5583998180866"
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NaTV de Sua Casa",
+    "url": "https://natvdesuacasa.casa/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://natvdesuacasa.casa/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Plano de Streaming NaTV",
+    "description": "Streaming de TV, filmes e séries em HD",
+    "brand": {
+      "@type": "Brand",
+      "name": "NaTV de Sua Casa"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "30.00",
+      "highPrice": "270.00",
+      "priceCurrency": "BRL",
+      "offerCount": "5",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    }
+  }
+  </script>
+  
+  <!-- ===== PWA: Manifesto Progressive Web App ===== -->
+  <link href="manifest.json" rel="manifest"/>
+  <link href="/icons/icon-192x192.png" rel="apple-touch-icon"/>
+  <meta content="#0d0d26" name="theme-color"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="NaTV" name="apple-mobile-web-app-title"/>
+  
+  <!-- ===== TYPOGRAPHY: Fonte moderna (Google Fonts) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* ===========================
+       Estilos atualizados — UX / UI / Responsividade
+       =========================== */
+
+    :root{
+      --bg: #0d0d26;
+      --surface: #0f1724;
+      --card: #111217;
+      --muted: #9ca3af;
+      --accent: #00bcd4;
+      --accent-2: #25d366;
+      --accent-cta: #ff7a18;
+      --text: #e6eef6;
+      --glass: rgba(255,255,255,0.03);
+      --radius-lg: 12px;
+      --radius-md: 8px;
+      --shadow: 0 12px 30px rgba(2,6,23,0.55);
+      --max-width: 1180px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body {
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #070814 100%);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .wrap {
+      width: calc(100% - 32px);
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      padding: 22px 16px;
+      text-align:center;
+      background: linear-gradient(90deg, rgba(0,188,212,0.12), rgba(37,211,102,0.06));
+      border-bottom: 1px solid rgba(255,255,255,0.02);
+      backdrop-filter: blur(6px);
+    }
+    header h1 { margin:0; font-size:1.6rem; color: #fff; font-weight:700; letter-spacing: -0.2px; }
+    header p { margin-top:6px; color: #cbd5e1; font-size:0.95rem; max-width:900px; margin-left:auto; margin-right:auto; }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: rgba(15, 23, 36, 0.95);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+    nav a:hover, nav a:focus {
+      background: var(--accent);
+      color: #000;
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 18px 0; }
+    .section-dark { 
+      background-color: var(--card); 
+      color: var(--text); 
+      padding-top: 24px; 
+      padding-bottom: 24px; 
+      border-top: 1px solid rgba(255,255,255,0.02); 
+      border-bottom: 1px solid rgba(255,255,255,0.02); 
+    }
+
+    h2.section-title {
+      text-align:center;
+      margin: 0 0 18px;
+      font-size: 1.35rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ===== CARROSSEL ===== */
+    .carrossel {
+      display:flex;
+      gap: 12px;
+      overflow-x:auto;
+      padding: 12px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carrossel::-webkit-scrollbar { height:8px; }
+    .carrossel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 10px; }
+
+    .carrossel-item {
+      display:inline-block;
+      width:120px;
+      text-align:center;
+      scroll-snap-align:start;
+      vertical-align: top;
+      cursor: pointer;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      padding: 8px;
+      border-radius: 12px;
+      transition: transform .22s ease, box-shadow .22s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+    .carrossel-item:focus, .carrossel-item:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+
+    .carrossel-item img { width:100%; height: auto; border-radius: 10px; display:block; object-fit:cover; }
+    .carrossel-item p { font-size: 0.88rem; margin-top:8px; color: var(--text); }
+
+    .carrossel-filmes .carrossel-item { width:150px; }
+    .carrossel-filmes .carrossel-item img { border-radius: 10px; height: 220px; object-fit: cover; }
+
+    .seo-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .seo-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .seo-card h3 { margin:0 0 10px; font-size:1.05rem; color:var(--accent); }
+    .seo-card p { margin:0 0 12px; color:#dbe6f3; font-size:0.95rem; }
+    .seo-card a {
+      display:inline-block;
+      padding:10px 14px;
+      background: var(--accent-2);
+      color:#fff;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .seo-text-columns {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+      margin-top:18px;
+    }
+    .seo-text-box {
+      background: rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:12px;
+      padding:18px;
+    }
+    .seo-text-box h3 { margin-top:0; color:var(--accent); }
+
+    /* ===== PLANS ===== */
+    .plans-wrapper {
+      position: relative;
+      padding: 26px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border-radius: 10px;
+      margin-top: 18px;
+      border: 1px solid rgba(255,255,255,0.02);
+      display: grid;
+      gap: 18px;
+    }
+    .plan {
+      min-width: 230px;
+      background-color: linear-gradient(180deg, #15171d, #0f1115);
+      background: var(--surface);
+      padding: 16px;
+      border-radius: 10px;
+      color:var(--text);
+      box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .plan h3 { margin:0 0 8px; font-size:1.05rem; color: var(--accent); }
+    .plan p { margin:0 0 12px; color: var(--muted); font-size:0.95rem; line-height:1.35; }
+    .plan a {
+      display:inline-block;
+      margin-top:8px;
+      padding:10px 12px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:700;
+      transition: transform .18s ease, opacity .18s;
+      border: none;
+    }
+    .plan a:hover { transform: translateY(-3px); opacity:0.95; }
+    .plan.popular { outline: 2px solid rgba(0,188,212,0.12); box-shadow: 0 18px 40px rgba(0,188,212,0.06); }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      width: 60px; height:60px; border-radius:50%;
+      background-color: var(--accent-2); display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4); z-index: 9999;
+      animation: pulse 2.6s infinite;
+      text-decoration: none;
+      color: #000;
+      font-weight: 800;
+    }
+    .whatsapp-float img { width:34px; height:34px; }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+      100% { transform: scale(1); }
+    }
+
+    /* ===== MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 10000;
+      justify-content: center; align-items: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity .22s ease;
+    }
+    .modal-overlay.open { display:flex; opacity:1; }
+    .modal-card {
+      width: 100%; max-width: 920px; background: linear-gradient(180deg,#0f1724,#071021); border-radius: var(--radius-lg); padding: 18px; color: var(--text); position: relative;
+      display: flex; gap: 18px; align-items: flex-start; overflow: hidden;
+      box-shadow: var(--shadow);
+      transform: translateY(6px) scale(.995);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .modal-overlay.open .modal-card { transform: translateY(0) scale(1); }
+    .modal-left { flex: 0 0 260px; }
+    .modal-left img { width: 100%; height: auto; border-radius: 8px; object-fit: cover; display:block; }
+    .modal-right { flex: 1 1 auto; min-width: 200px; }
+    .modal-title { margin:0 0 8px; font-size: 1.25rem; color: var(--text); }
+    .modal-subtitle { margin:0 0 12px; color: var(--muted); font-size:0.95rem; }
+    .modal-sinopse { color:#d1d5db; line-height:1.6; font-size:15.5px; margin-bottom:12px; text-align:justify; max-height:44vh; overflow:auto; padding-right:6px; }
+
+    .modal-actions { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+    .btn-whatsapp { background: var(--accent-2); color: #000; padding: 10px 14px; border-radius:8px; text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:8px; }
+    .btn-close { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.08); padding:8px 12px; border-radius:8px; cursor:pointer; }
+    .modal-close-x { position:absolute; top:12px; right:12px; background:transparent; border:none; color:#fff; font-size:20px; cursor:pointer; }
+
+    @media (max-width:880px) {
+      .modal-card { flex-direction: column; padding:12px; }
+      .modal-left { width:100%; flex:0 0 auto; }
+      .modal-left img { max-height: 320px; width:100%; object-fit:cover; }
+      .carrossel-filmes .carrossel-item img { height: 260px; }
+      .carrossel-item { width: 42vw; min-width: 160px; }
+      .plans-wrapper { padding: 18px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    .modal-card-actions {
+      background: var(--surface);
+      color: var(--text);
+      padding: 22px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .modal-title-actions {
+      margin: 0 0 18px;
+      font-size: 1.3rem;
+      color: var(--text);
+    }
+    .actions-buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .action-btn {
+      display: block;
+      padding: 14px;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .action-btn:hover {
+      transform: translateY(-2px);
+      background-color: #00a5bb;
+    }
+    .action-btn.whatsapp-action {
+      background-color: var(--accent-2);
+      color: #000;
+    }
+    .ios-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 8px;
+    }
+    .action-btn-ios {
+      display: block;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+    .action-btn-ios:hover {
+      background-color: #444;
+    }
+
+    /* ===== FEEDBACK SECTION ===== */
+    #feedback-section {
+      padding: 40px 0;
+      background: linear-gradient(180deg, var(--card) 0%, var(--bg) 100%);
+    }
+
+    .feedback-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .feedback-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .feedback-header h2 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .feedback-header p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Like Section */
+    .like-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .like-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .like-btn.like {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+    }
+
+    .like-btn.like:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    .like-btn.like.active {
+      background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    }
+
+    .like-btn.dislike {
+      background: linear-gradient(135deg, #f44336, #d32f2f);
+      color: white;
+    }
+
+    .like-btn.dislike:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(244, 67, 54, 0.4);
+    }
+
+    .like-btn.dislike.active {
+      background: linear-gradient(135deg, #c62828, #b71c1c);
+    }
+
+    .like-count {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* Comment Form */
+    .comment-form {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .comment-form textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      resize: vertical;
+      margin-bottom: 12px;
+    }
+
+    .comment-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .comment-form textarea::placeholder {
+      color: var(--muted);
+    }
+
+    .comment-form button {
+      padding: 12px 30px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .comment-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+    }
+
+    /* Comments List */
+    .comments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .comment-card {
+      background: var(--surface);
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .comment-avatar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .comment-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .comment-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .comment-text {
+      color: #d1d5db;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .comment-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .comment-like-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 5px 10px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .comment-like-btn:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--accent);
+    }
+
+    .comment-like-btn.active {
+      color: var(--accent);
+    }
+
+    .no-comments {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+    }
+
+    .no-comments-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--card);
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .like-section {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .like-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      nav ul {
+        gap: 4px;
+      }
+      
+      nav a {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Skip to content for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: #000;
+      padding: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Mobile only class */
+    .mobile-only {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .mobile-only {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ===== HEADER ===== -->
+  <header role="banner">
+    <h1>NaTV de Sua Casa</h1>
+    <p>Assista TV, filmes e séries em qualquer lugar. Streaming de qualidade HD para Smart TV, TV Box e celular.</p>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav role="navigation" aria-label="Menu principal">
+    <ul>
+      <li><a href="#apps-section">Apps</a></li>
+      <li><a href="#conteudos-section">Conteúdos</a></li>
+      <li><a href="#planos-section">Planos</a></li>
+      <li><a href="#feedback-section">Avaliações</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content" role="main">
+    
+    <!-- Hero Section -->
+    <section aria-labelledby="hero-title" style="padding: 30px 0; text-align: center;">
+      <div class="wrap">
+        <h2 id="hero-title" style="color: var(--accent); font-size: 1.4rem; margin-bottom: 15px;">
+          Transforme sua TV em uma central de entretenimento
+        </h2>
+        <p style="color: var(--muted); max-width: 600px; margin: 0 auto 20px;">
+          Mais de 500 canais ao vivo, filmes e séries atualizados. Compatível com Smart TV, TV Box, Roku, Fire Stick e celular.
+        </p>
+        <a href="#" id="openActionsModal" style="display: inline-block; padding: 14px 28px; background: var(--accent); color: #000; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem;">
+          Teste Grátis Agora
+        </a>
+      </div>
+    </section>
+
+    <!-- Widget NATV -->
+    <section style="padding: 16px 0; text-align: center;">
+      <div class="wrap">
+        <button id="openNatvBtn" style="padding: 12px 24px; background: var(--accent); color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1rem;">
+          Ver Programação de Futebol
+        </button>
+      </div>
+    </section>
+
+    <!-- Modal Widget NATV -->
+    <div id="natvOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10001; justify-content:center; align-items:center; padding:20px;">
+      <div style="position:relative; width:100%; max-width:900px; background:#111; border-radius:12px; overflow:hidden;">
+        <button id="natvCloseX" style="position:absolute; top:10px; right:10px; background:transparent; border:none; color:#fff; font-size:24px; cursor:pointer; z-index:10;">✕</button>
+        <iframe id="natvFrame" src="" style="width:100%; height:70vh; border:none;"></iframe>
+        <div style="text-align:center; padding:10px;">
+          <button id="natvCloseBtn" style="padding:10px 20px; background:var(--accent); color:#000; border:none; border-radius:8px; font-weight:700; cursor:pointer;">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const sources = ["https://widgets.futbolenlatv.com/?color=005df8&culture=pt-BR"];
+      const overlay = document.getElementById("natvOverlay");
+      const frame = document.getElementById("natvFrame");
+      const openBtn = document.getElementById("openNatvBtn");
+      const closeBtn = document.getElementById("natvCloseBtn");
+      const closeX = document.getElementById("natvCloseX");
+
+      function openNatv(){
+        overlay.style.display="flex";
+        frame.src = sources[0];
+      }
+      function closeNatv(){
+        overlay.style.display="none";
+        frame.src="";
+      }
+
+      openBtn.onclick = openNatv;
+      closeBtn.onclick = closeX.onclick = closeNatv;
+    </script>
+
+    <!-- ===== APPS SECTION ===== -->
+    <section id="apps-section" aria-labelledby="apps-title" class="section-dark">
+      <div class="wrap">
+        <h2 class="section-title" id="apps-title">
+          Confira agora mesmo na sua Smart TV, TV Box ou celular
+        </h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 20px;">
+          Instale um dos aplicativos abaixo para começar a assistir
+        </p>
+
+        <div aria-label="Lista de aplicativos compatíveis" class="carrossel" role="list">
+          <!-- hd player -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpwYEiH3j7uetaP0WLLiX1nJmZLn10uBHadsPLraHYyp5EbLJlIbvueFa3GSDIrnyPeXHUD3KwM3DnYtOjLvm_kuuknCmj4IZoRLa9QgVI16KTEjGBOvWP-a4GXCA5SjzcK4bhd8dqAQRNX1VdkJ3KIwueqbNTBYVWrWlGYZJ_kRE_6eeT-gpe41ZMQoF2/s1600/download.png"
+               data-sinopse="Player Leve, Interface Limpa, Streaming Sem Complicações. Experimente um player de streaming otimizado para velocidade e simplicidade. Disponível na Google Play Store (Android), Roku Channel Store, Amazon Appstore (Fire Stick), LG Content Store e Samsung Smart Hub."
+               data-title="HD Player">
+            <img alt="Aplicativo HD Player para streaming de TV - compatível com Android, Roku, Fire Stick, LG e Samsung" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpwYEiH3j7uetaP0WLLiX1nJmZLn10uBHadsPLraHYyp5EbLJlIbvueFa3GSDIrnyPeXHUD3KwM3DnYtOjLvm_kuuknCmj4IZoRLa9QgVI16KTEjGBOvWP-a4GXCA5SjzcK4bhd8dqAQRNX1VdkJ3KIwueqbNTBYVWrWlGYZJ_kRE_6eeT-gpe41ZMQoF2/w1684-h1069-p-k-no-nu/download.png" loading="lazy"/>
+            <p>HD Player</p>
+          </article>
+
+          <!-- txs tv player -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="/assets/app-hd-player.svg"
+               data-sinopse="Player Leve, Interface Limpa, Streaming Sem Complicações. Disponível na Google Play Store (Android), TV Box, Smart TVs Philips, TCL, Semp e celular."
+               data-title="TXS TV Player">
+            <img alt="Aplicativo TXS TV Player para streaming - compatível com Android, TV Box e Smart TVs" src="/assets/app-hd-player.svg" loading="lazy"/>
+            <p>TXS TV Player</p>
+          </article>
+
+          <!-- krator+ -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="/assets/app-txs-tv-player.svg"
+               data-sinopse="Desempenho e Estabilidade em Primeiro Lugar. Disponível na Google Play Store (Android), Roku, Smart TVs LG e Samsung."
+               data-title="Krator+">
+            <img alt="Aplicativo Krator+ para streaming de TV - compatível com Android, Roku, LG e Samsung" src="/assets/app-txs-tv-player.svg" loading="lazy"/>
+            <p>Krator+</p>
+          </article>
+
+          <!-- lazer play -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="/assets/app-krator-plus.svg"
+               data-sinopse="Entretenimento Sem Complicações. Disponível na Google Play Store (Android), Roku Channel Store, LG Content Store e Samsung Smart Hub."
+               data-title="Lazer Play">
+            <img alt="Aplicativo Lazer Play para streaming - compatível com Android, Roku, LG e Samsung" src="/assets/app-krator-plus.svg" loading="lazy"/>
+            <p>Lazer Play</p>
+          </article>
+
+          <!-- ssiptv -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="/assets/app-lazer-play.svg"
+               data-sinopse="Player Versátil e Compatível com Diversos Formatos. Compatível com Smart TVs Sony, LG e Samsung (inclusive versões mais antigas)."
+               data-title="SS IPTV">
+            <img alt="Aplicativo SS IPTV para streaming - compatível com Smart TVs Sony, LG e Samsung" src="/assets/app-lazer-play.svg" loading="lazy"/>
+            <p>SS IPTV</p>
+          </article>
+
+          <!-- dreamTV -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="/assets/app-ss-iptv.svg"
+               data-sinopse="Interface Moderna com Busca Rápida. Disponível na LG Content Store, Samsung Smart Hub e Roku Channel Store."
+               data-title="DreamTV">
+            <img alt="Aplicativo DreamTV para streaming - compatível com LG, Samsung e Roku" src="/assets/app-ss-iptv.svg" loading="lazy"/>
+            <p>DreamTV</p>
+          </article>
+
+          <!-- xcloud -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="/assets/app-dreamtv.svg"
+               data-sinopse="Solução em Nuvem para Streaming Otimizado. Disponível no Samsung Smart Hub, LG Content Store e Roku Channel Store."
+               data-title="XCloud">
+            <img alt="Aplicativo XCloud para streaming em nuvem - compatível com Samsung, LG e Roku" src="/assets/app-dreamtv.svg" loading="lazy"/>
+            <p>XCloud</p>
+          </article>
+
+          <!-- iptv Smarters -->
+          <article class="carrossel-item app-item" role="listitem"
+               data-img="/assets/app-xcloud.svg"
+               data-sinopse="Player Popular para IPTV — Simples, Completo e Compatível. Compatível com Smart TVs Samsung e LG (inclusive modelos mais antigos) e iPhone (Smarters Play Lite na App Store)."
+               data-title="IPTV Smarters">
+            <img alt="Aplicativo IPTV Smarters para streaming - compatível com Samsung, LG e iPhone" src="/assets/app-xcloud.svg" loading="lazy"/>
+            <p>IPTV Smarters</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTEÚDOS SECTION ===== -->
+    <section id="conteudos-section" aria-labelledby="conteudos-title" style="padding: 24px 0;">
+      <div class="wrap">
+        <h2 class="section-title" id="conteudos-title">
+          Conteúdos Disponíveis
+        </h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 20px;">
+          Canais ao vivo, filmes, séries, esportes e muito mais
+        </p>
+
+        <div aria-label="Lista de conteúdos disponíveis" class="carrossel" role="list">
+          <article class="carrossel-item conteudo-item" role="listitem"
+               data-title="Canais ao Vivo"
+               data-img="/assets/conteudo-canais.svg"
+               data-sinopse="Mais de 500 canais ao vivo incluindo TV aberta, esportes, filmes, séries, infantil, documentários e muito mais. Qualidade HD garantida.">
+            <div style="width: 100%; height: 80px; background: linear-gradient(135deg, var(--accent), #0097a7); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📺</div>
+            <p>Canais ao Vivo</p>
+          </article>
+
+          <article class="carrossel-item conteudo-item" role="listitem"
+               data-title="Filmes"
+               data-img="/assets/conteudo-filmes.svg"
+               data-sinopse="Catálogo completo de filmes atualizados semanalmente. Lançamentos, clássicos, ação, comédia, terror, romance e muito mais.">
+            <div style="width: 100%; height: 80px; background: linear-gradient(135deg, #e91e63, #c2185b); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🎬</div>
+            <p>Filmes</p>
+          </article>
+
+          <article class="carrossel-item conteudo-item" role="listitem"
+               data-title="Séries"
+               data-img="/assets/conteudo-series.svg"
+               data-sinopse="Séries completas e atualizadas. Acompanhe suas séries favoritas com episódios novos toda semana.">
+            <div style="width: 100%; height: 80px; background: linear-gradient(135deg, #9c27b0, #7b1fa2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📽️</div>
+            <p>Séries</p>
+          </article>
+
+          <article class="carrossel-item conteudo-item" role="listitem"
+               data-title="Esportes"
+               data-img="/assets/conteudo-esportes.svg"
+               data-sinopse="Futebol ao vivo, UFC, NBA, NFL, tênis e todos os principais eventos esportivos. Nunca perca um jogo!">
+            <div style="width: 100%; height: 80px; background: linear-gradient(135deg, #4caf50, #388e3c); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚽</div>
+            <p>Esportes</p>
+          </article>
+
+          <article class="carrossel-item conteudo-item" role="listitem"
+               data-title="Infantil"
+               data-img="/assets/conteudo-infantil.svg"
+               data-sinopse="Conteúdo seguro e divertido para as crianças. Desenhos, filmes e séries infantis 24 horas.">
+            <div style="width: 100%; height: 80px; background: linear-gradient(135deg, #ff9800, #f57c00); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🧸</div>
+            <p>Infantil</p>
+          </article>
+
+          <article class="carrossel-item conteudo-item" role="listitem"
+               data-title="Documentários"
+               data-img="/assets/conteudo-documentarios.svg"
+               data-sinopse="Documentários de natureza, história, ciência, crime e muito mais. Conteúdo educativo e envolvente.">
+            <div style="width: 100%; height: 80px; background: linear-gradient(135deg, #607d8b, #455a64); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🌍</div>
+            <p>Documentários</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORMAS DE PAGAMENTO ===== -->
+    <section style="padding: 18px 20px;">
+      <div class="wrap">
+        <h2 style="text-align:left; color:#fff; margin-bottom:8px;">Formas de Pagamento</h2>
+        <p style="color:#ddd;">Aceitamos Pix e Cartão de Crédito.</p>
+        <img alt="Pagamento via Pix aceito" src="/assets/pix.svg" style="width:50px; margin: 0 10px;" loading="lazy"/>
+        <img alt="Pagamento via Cartão de Crédito aceito" src="/assets/cartao.svg" style="width:50px; margin: 0 10px;" loading="lazy"/>
+      </div>
+    </section>
+
+    <!-- ===== PLANOS SECTION ===== -->
+    <section id="planos-section" style="padding: 20px; background-color: #111; color: white; position: relative;">
+      <div class="wrap" style="position:relative;">
+        <h2 style="text-align: center; margin-bottom: 20px;">Nossos Planos</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 20px;">Escolha o plano ideal para você</p>
+        
+        <div id="carrossel-planos" style="display:flex; gap:20px; overflow-x:auto; padding: 10px;">
+          <article class="plan" itemscope itemtype="https://schema.org/Offer">
+            <h3 itemprop="name">Plano Básico</h3>
+            <p>
+              <span itemprop="price" content="30.00">R$30,00</span>/mês<br/>
+              <meta itemprop="priceCurrency" content="BRL"/>
+              Sem conteúdo adulto e novelas
+            </p>
+            <a href="https://wa.me/5583998180866?text=Olá, tenho interesse no Plano Básico de R$30 (sem adulto e novelas)" onclick="return trackWhatsAppClick(this.href)" style="background: var(--accent); color:#000;" target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+          </article>
+          
+          <article class="plan popular" itemscope itemtype="https://schema.org/Offer">
+            <h3 itemprop="name">Plano Completo</h3>
+            <p>
+              <span itemprop="price" content="35.00">R$35,00</span>/mês<br/>
+              <meta itemprop="priceCurrency" content="BRL"/>
+              Inclui todo conteúdo
+            </p>
+            <a href="https://wa.me/5583998180866?text=Olá, tenho interesse no Plano Completo de R$35 (com tudo incluso)" onclick="return trackWhatsAppClick(this.href)" style="background: var(--accent); color:#000;" target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+          </article>
+          
+          <article class="plan" itemscope itemtype="https://schema.org/Offer">
+            <h3 itemprop="name">Plano Trimestral</h3>
+            <p>
+              <span itemprop="price" content="90.00">R$90,00</span><br/>
+              <meta itemprop="priceCurrency" content="BRL"/>
+              Plano completo por 3 meses
+            </p>
+            <a href="https://wa.me/5583998180866?text=Olá, quero o Plano Trimestral (3 meses por R$90)" onclick="return trackWhatsAppClick(this.href)" style="background: var(--accent); color:#000;" target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+          </article>
+          
+          <article class="plan" itemscope itemtype="https://schema.org/Offer">
+            <h3 itemprop="name">Plano Semestral</h3>
+            <p>
+              <span itemprop="price" content="150.00">R$150,00</span><br/>
+              <meta itemprop="priceCurrency" content="BRL"/>
+              Plano completo por 6 meses
+            </p>
+            <a href="https://wa.me/5583998180866?text=Olá, quero o Plano Semestral (6 meses por R$150)" onclick="return trackWhatsAppClick(this.href)" style="background: var(--accent); color:#000;" target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+          </article>
+          
+          <article class="plan" itemscope itemtype="https://schema.org/Offer">
+            <h3 itemprop="name">Plano Anual</h3>
+            <p>
+              <span itemprop="price" content="270.00">R$270,00</span><br/>
+              <meta itemprop="priceCurrency" content="BRL"/>
+              Plano completo por 12 meses
+            </p>
+            <a href="https://wa.me/5583998180866?text=Olá, quero o Plano Anual (12 meses por R$270)" onclick="return trackWhatsAppClick(this.href)" style="background: gold; color:#000;" target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function scrollCarrossel(direction) {
+        const carrossel = document.getElementById("carrossel-planos");
+        const scrollAmount = 270;
+        if (carrossel) carrossel.scrollBy({ left: scrollAmount * direction, behavior: "smooth" });
+      }
+    </script>
+
+    <!-- ===== PROMOÇÃO INDICAÇÃO ===== -->
+    <section style="padding: 18px;">
+      <div class="wrap">
+        <h2 style="color:#00bcd4; text-align:center;">Foi indicado por alguém?</h2>
+        <p style="max-width:720px; margin:0 auto; text-align:center; color:#f1f1f1;">
+          Ganhe <strong style="color:#4caf50;">50% de desconto</strong> no <strong>segundo mês do plano mensal</strong>! É só informar o número de quem te indicou no momento da assinatura.
+        </p>
+        <div style="text-align:center; margin-top:12px;">
+          <a href="https://wa.me/5583998180866?text=Fui%20indicado%20por%20um%20cliente%20e%20gostaria%20de%2050%%20de%20desconto%20no%20primeiro%20m%C3%AAs%20do%20plano%20mensal." onclick="return trackWhatsAppClick(this.href)" style="background:var(--accent-2); color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none;" target="_blank" rel="noopener noreferrer">
+            Quero o Desconto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPARTILHAR ===== -->
+    <section style="text-align:center; padding:16px;">
+      <div class="wrap">
+        <h2>Compartilhe este site com um amigo</h2>
+        <p>Indique este site aos seus amigos e transforme a TV deles!</p>
+        <a href="https://api.whatsapp.com/send?text=🚀 Conheça o app de TV NaTVBox! Assista canais, filmes e séries direto na sua TV ou celular. Baixe aqui: https://natvdesuacasa.casa/" onclick="return trackWhatsAppClick(this.href)" style="background:#fff; color:#000; padding:10px 14px; border-radius:8px; text-decoration:none;" target="_blank" rel="noopener noreferrer">
+          Compartilhar via WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== SEO PAGES / SEARCH SECTION ===== -->
+    <section id="google-section" class="section-dark" aria-labelledby="google-title">
+      <div class="wrap">
+        <h2 class="section-title" id="google-title">NaTV de Sua Casa no Google</h2>
+        <p style="text-align:center; color: var(--muted); max-width: 900px; margin: 0 auto 18px;">
+          Se você procura TV por internet com canais ao vivo, filmes, séries e esportes, a NaTV de Sua Casa funciona em Smart TV, TV Box e celular. 
+          Mantivemos os mesmos planos, valores e links do WhatsApp, e agora o site também conta com páginas otimizadas para buscas como teste IPTV, IPTV Paraíba, IPTV Brasil e IPTV para Smart TV.
+        </p>
+
+        <div class="seo-grid">
+          <article class="seo-card">
+            <h3>Teste IPTV Grátis</h3>
+            <p>Peça seu teste grátis e conheça a programação antes de assinar.</p>
+            <a href="/teste-iptv.html">Ver página</a>
+          </article>
+          <article class="seo-card">
+            <h3>IPTV Brasil</h3>
+            <p>Página otimizada para quem busca TV por internet, filmes, séries e canais ao vivo.</p>
+            <a href="/iptv-brasil.html">Ver página</a>
+          </article>
+          <article class="seo-card">
+            <h3>IPTV Paraíba</h3>
+            <p>Conteúdo pensado para buscas locais, mantendo seu atendimento no WhatsApp.</p>
+            <a href="/iptv-paraiba.html">Ver página</a>
+          </article>
+          <article class="seo-card">
+            <h3>IPTV para Smart TV</h3>
+            <p>Explica compatibilidade com Smart TV, TV Box, Roku, Fire Stick e celular.</p>
+            <a href="/iptv-smart-tv.html">Ver página</a>
+          </article>
+        </div>
+
+        <div class="seo-text-columns">
+          <div class="seo-text-box">
+            <h3>O que você encontra</h3>
+            <p>Mais de 500 canais ao vivo, filmes, séries, esportes, infantil e documentários. Planos atuais a partir de R$30/mês, pagamento por Pix e cartão, com atendimento e suporte via WhatsApp.</p>
+          </div>
+          <div class="seo-text-box">
+            <h3>Em quais aparelhos funciona</h3>
+            <p>Smart TV, TV Box, celular, Roku, Fire Stick e outros dispositivos compatíveis com os aplicativos listados nesta página.</p>
+          </div>
+          <div class="seo-text-box">
+            <h3>CTA principal</h3>
+            <p>O foco continua o mesmo: pedir teste grátis, falar no WhatsApp e escolher o plano ideal sem alterar seus valores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEEDBACK SECTION ===== -->
+    <section id="feedback-section" aria-labelledby="feedback-title">
+      <div class="wrap feedback-container">
+        <div class="feedback-header">
+          <h2 id="feedback-title">O que você achou do NaTV?</h2>
+          <p>Sua opinião é importante para nós! Avalie e deixe seu comentário de forma anônima.</p>
+        </div>
+
+        <!-- Like/Dislike Section -->
+        <div class="like-section">
+          <button class="like-btn like" id="likeBtn" aria-label="Curtir">
+            <span>👍</span>
+            <span>Gostei</span>
+            <span class="like-count" id="likeCount">0</span>
+          </button>
+          <button class="like-btn dislike" id="dislikeBtn" aria-label="Não curtir">
+            <span>👎</span>
+            <span>Não Gostei</span>
+            <span class="like-count" id="dislikeCount">0</span>
+          </button>
+        </div>
+
+        <!-- Comment Form -->
+        <div class="comment-form">
+          <textarea id="commentInput" placeholder="Deixe seu comentário anônimo aqui... (máximo 500 caracteres)" maxlength="500" aria-label="Campo de comentário"></textarea>
+          <button id="submitComment" type="button">Enviar Comentário</button>
+        </div>
+
+        <!-- Comments List -->
+        <div class="comments-list" id="commentsList">
+          <div class="no-comments" id="noComments">
+            <div class="no-comments-icon">💬</div>
+            <p>Seja o primeiro a comentar!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p>&copy; 2025 NaTV de Sua Casa. Todos os direitos reservados.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;">
+        <a href="https://wa.me/5583998180866" onclick="return trackWhatsAppClick(this.href)" style="color: var(--accent); text-decoration: none;">Contato via WhatsApp</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOAT ===== -->
+  <a class="whatsapp-float mobile-only" href="https://wa.me/5583998180866?text=Ol%C3%A1%2C%20vim%20do%20aplicativo%20e%20gostaria%20de%20conhecer%20os%20canais." onclick="return trackWhatsAppClick(this.href)" target="_blank" rel="noopener noreferrer" title="Fale conosco no WhatsApp" aria-label="Abrir WhatsApp para contato">
+    <img alt="Ícone do WhatsApp" src="/assets/whatsapp.svg" loading="lazy"/>
+  </a>
+
+  <!-- ===== MODAL GENÉRICO ===== -->
+  <div aria-hidden="true" aria-modal="true" class="modal-overlay" id="globalModal" role="dialog">
+    <div class="modal-card" role="document">
+      <button aria-label="Fechar modal" class="modal-close-x" id="globalModalClose">✕</button>
+      <div class="modal-left">
+        <img alt="Capa" id="globalModalImg" src="" loading="lazy"/>
+      </div>
+      <div class="modal-right">
+        <h3 class="modal-title" id="globalModalTitle">Título</h3>
+        <div class="modal-subtitle" id="globalModalSub">Detalhes</div>
+        <div class="modal-sinopse" id="globalModalSinopse">Sinopse / descrição</div>
+        <div class="modal-actions">
+          <a class="btn-whatsapp" href="#" id="globalModalWhats" rel="noopener" target="_blank">
+            Testar Agora no WhatsApp
+          </a>
+          <button class="btn-close" id="globalModalBtnClose" type="button">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL AÇÕES ===== -->
+  <div aria-hidden="true" aria-modal="true" class="modal-overlay" id="actionsModal" role="dialog">
+    <div class="modal-card-actions" role="document">
+      <button aria-label="Fechar modal" class="modal-close-x" id="actionsModalCloseX">✕</button>
+      <h3 class="modal-title-actions">Escolha uma opção</h3>
+      <div class="actions-buttons-container">
+        <a class="action-btn" href="https://testeagora.tv/natv_de_sua_casa" target="_blank" rel="noopener noreferrer">
+          1. Criar Teste Grátis
+        </a>
+        <a class="action-btn" href="http://aftv.news/808592" target="_blank" rel="noopener noreferrer">
+          2. Baixar App (Android)
+        </a>
+        <div class="ios-options">
+          <span style="color: #ff6b6b; font-weight: bold;">3. Baixar App (iOS)</span>
+          <a class="action-btn-ios" href="https://apps.apple.com/br/app/iptv-stream-player/id6479939671" target="_blank" rel="noopener noreferrer">
+            Opção 1 (Stream Player)
+          </a>
+          <a class="action-btn-ios" href="https://apps.apple.com/br/app/vu-iptv-player/id6526480705" target="_blank" rel="noopener noreferrer">
+            Opção 2 (VU Player)
+          </a>
+        </div>
+        <a class="action-btn whatsapp-action" href="https://wa.me/5583998180866" onclick="return trackWhatsAppClick(this.href)" target="_blank" rel="noopener noreferrer">
+          4. Falar com Atendente
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function (registration) {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+          })
+          .catch(function (error) {
+            console.log('Erro ao registrar o Service Worker:', error);
+          });
+      });
+    }
+
+    // PWA Install Prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+
+      const installBtn = document.createElement('button');
+      installBtn.innerText = 'Instalar App';
+      installBtn.style = 'position:fixed;bottom:90px;right:10px;padding:10px;background:#0ded26;color:#fff;border:none;border-radius:8px;z-index:9999;cursor:pointer;';
+      document.body.appendChild(installBtn);
+
+      installBtn.addEventListener('click', () => {
+        installBtn.remove();
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(choice => {
+          if (choice.outcome === 'accepted') {
+            console.log('Usuário instalou o app');
+          }
+          deferredPrompt = null;
+        });
+      });
+    });
+  </script>
+
+  <!-- Modal Script -->
+  <script>
+    (function() {
+      const selectors = '.app-item, .movie-card, .conteudo-item';
+      const items = document.querySelectorAll(selectors);
+
+      const modalOverlay = document.getElementById('globalModal');
+      const modalImg = document.getElementById('globalModalImg');
+      const modalTitle = document.getElementById('globalModalTitle');
+      const modalSub = document.getElementById('globalModalSub');
+      const modalSinopse = document.getElementById('globalModalSinopse');
+      const modalWhats = document.getElementById('globalModalWhats');
+      const modalCloseBtn = document.getElementById('globalModalBtnClose');
+      const modalCloseX = document.getElementById('globalModalClose');
+
+      const phoneNumber = '5583998180866';
+
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          const title = item.getAttribute('data-title') || (item.querySelector('p') ? item.querySelector('p').innerText : 'Título');
+          const sinopse = item.getAttribute('data-sinopse') || 'Descrição não disponível.';
+          const img = item.getAttribute('data-img') || (item.querySelector('img') ? item.querySelector('img').src : '/assets/placeholder.svg');
+          const subtype = item.classList.contains('app-item') ? 'Aplicativo' : (item.classList.contains('conteudo-item') ? 'Conteúdo' : 'Filme / Série');
+
+          delete modalImg.dataset.fallbackApplied;
+          modalImg.src = img || '/assets/placeholder.svg';
+          modalImg.alt = `Capa - ${title}`;
+          modalTitle.textContent = title;
+          modalSub.textContent = subtype;
+          modalSinopse.textContent = sinopse;
+
+          const msg = `Olá, quero testar agora: ${title}`;
+          modalWhats.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+          modalWhats.setAttribute('onclick', 'return trackWhatsAppClick(this.href)');
+
+          modalOverlay.classList.add('open');
+          modalOverlay.setAttribute('aria-hidden','false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeModal() {
+        modalOverlay.classList.remove('open');
+        modalOverlay.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+
+      modalCloseBtn.addEventListener('click', closeModal);
+      modalCloseX.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal();
+      });
+    })();
+  </script>
+
+  <!-- Actions Modal Script -->
+  <script>
+    (function() {
+      const openBtn = document.getElementById('openActionsModal');
+      const actionsModal = document.getElementById('actionsModal');
+      const closeBtnX = document.getElementById('actionsModalCloseX');
+
+      function openModal() {
+        if (actionsModal) {
+          actionsModal.classList.add('open');
+          actionsModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeModal() {
+        if (actionsModal) {
+          actionsModal.classList.remove('open');
+          actionsModal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (openBtn) {
+        openBtn.addEventListener('click', (e) => {
+          e.preventDefault(); 
+          openModal();
+        });
+      }
+
+      if (closeBtnX) {
+        closeBtnX.addEventListener('click', closeModal);
+      }
+
+      if (actionsModal) {
+        actionsModal.addEventListener('click', (e) => {
+          if (e.target === actionsModal) {
+            closeModal();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && actionsModal && actionsModal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
+
+  <script>
+    (function() {
+      function fallbackSvg(label, bg1, bg2) {
+        const safeLabel = (label || 'NaTV').replace(/[&<>"]/g, '');
+        return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+          `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="${bg1}"/>
+                <stop offset="100%" stop-color="${bg2}"/>
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="800" rx="36" fill="url(#g)"/>
+            <circle cx="180" cy="170" r="70" fill="rgba(255,255,255,0.10)"/>
+            <circle cx="1020" cy="140" r="50" fill="rgba(255,255,255,0.08)"/>
+            <circle cx="960" cy="650" r="90" fill="rgba(255,255,255,0.06)"/>
+            <text x="90" y="380" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700">${safeLabel}</text>
+            <text x="90" y="470" fill="rgba(255,255,255,0.85)" font-family="Inter, Arial, sans-serif" font-size="34">NaTV de Sua Casa</text>
+            <text x="90" y="525" fill="rgba(255,255,255,0.72)" font-family="Inter, Arial, sans-serif" font-size="28">Imagem indisponível no servidor original</text>
+          </svg>`
+        );
+      }
+      function getFallbackForImage(img) {
+        const alt = (img.getAttribute('alt') || '').toLowerCase();
+        const holder = img.closest('[data-title]');
+        const title = (holder ? holder.getAttribute('data-title') : '') || img.getAttribute('alt') || 'NaTV';
+        if (alt.includes('pix')) return fallbackSvg('Pix', '#18a249', '#0d5f34');
+        if (alt.includes('cartão') || alt.includes('credito')) return fallbackSvg('Cartão', '#f59e0b', '#7c2d12');
+        if (alt.includes('whatsapp')) return fallbackSvg('WhatsApp', '#25d366', '#0f5132');
+        return fallbackSvg(title, '#0f4c81', '#09142a');
+      }
+      document.querySelectorAll('img').forEach((img) => {
+        img.addEventListener('error', function handleError() {
+          if (img.dataset.fallbackApplied === '1') return;
+          img.dataset.fallbackApplied = '1';
+          img.src = getFallbackForImage(img);
+        }, { once: false });
+      });
+      const modalImg = document.getElementById('globalModalImg');
+      if (modalImg) {
+        modalImg.addEventListener('error', () => {
+          const title = document.getElementById('globalModalTitle')?.textContent || 'NaTV';
+          if (modalImg.dataset.fallbackApplied === '1') return;
+          modalImg.dataset.fallbackApplied = '1';
+          modalImg.src = fallbackSvg(title, '#0f4c81', '#09142a');
+        });
+      }
+    })();
+  </script>
+
+
+  <!-- Feedback System Script (Backend Netlify) -->
+  <script>
+    (function() {
+      // API Base URL
+      // Em produção este projeto agora suporta /api no Render Web Service.
+      // Em ambiente local também usa /api pelo servidor Node.
+      const API_BASE = '/api';
+
+      // Gerar ID único para o visitante (anônimo, sem dados pessoais)
+      function getVisitorId() {
+        let visitorId = localStorage.getItem('natv_visitor_id');
+        if (!visitorId) {
+          visitorId = 'v_' + Date.now().toString(36) + Math.random().toString(36).substr(2);
+          localStorage.setItem('natv_visitor_id', visitorId);
+        }
+        return visitorId;
+      }
+
+      const visitorId = getVisitorId();
+
+      // Estado local
+      let likes = 0;
+      let dislikes = 0;
+      let userVote = localStorage.getItem('natv_user_vote') || null;
+      let comments = [];
+      let likedComments = JSON.parse(localStorage.getItem('natv_liked_comments') || '[]');
+      let isLoading = false;
+
+      // DOM Elements
+      const likeBtn = document.getElementById('likeBtn');
+      const dislikeBtn = document.getElementById('dislikeBtn');
+      const likeCount = document.getElementById('likeCount');
+      const dislikeCount = document.getElementById('dislikeCount');
+      const commentInput = document.getElementById('commentInput');
+      const submitComment = document.getElementById('submitComment');
+      const commentsList = document.getElementById('commentsList');
+      const noComments = document.getElementById('noComments');
+
+      // Format date
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        const now = new Date();
+        const diff = now - date;
+        
+        if (diff < 60000) return 'Agora mesmo';
+        if (diff < 3600000) return `Há ${Math.floor(diff / 60000)} min`;
+        if (diff < 86400000) return `Há ${Math.floor(diff / 3600000)} horas`;
+        if (diff < 604800000) return `Há ${Math.floor(diff / 86400000)} dias`;
+        
+        return date.toLocaleDateString('pt-BR');
+      }
+
+      // Escape HTML to prevent XSS
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      // Update UI
+      function updateLikeUI() {
+        likeCount.textContent = likes;
+        dislikeCount.textContent = dislikes;
+        
+        likeBtn.classList.toggle('active', userVote === 'like');
+        dislikeBtn.classList.toggle('active', userVote === 'dislike');
+        
+        // Disable buttons while loading
+        likeBtn.disabled = isLoading;
+        dislikeBtn.disabled = isLoading;
+      }
+
+      // Fetch votes from backend
+      async function fetchVotes() {
+        try {
+          const response = await fetch(`${API_BASE}/votes`);
+          if (response.ok) {
+            const data = await response.json();
+            likes = data.likes || 0;
+            dislikes = data.dislikes || 0;
+            updateLikeUI();
+          } else {
+            throw new Error('Falha ao carregar votos');
+          }
+        } catch (error) {
+          console.warn('Erro ao buscar votos:', error);
+          // Fallback para localStorage
+          likes = parseInt(localStorage.getItem('natv_likes') || '47');
+          dislikes = parseInt(localStorage.getItem('natv_dislikes') || '3');
+          updateLikeUI();
+        }
+      }
+
+      // Handle vote
+      async function handleVote(type) {
+        if (isLoading) return;
+        isLoading = true;
+        updateLikeUI();
+
+        const action = userVote === type ? 'remove' : type;
+        
+        try {
+          const response = await fetch(`${API_BASE}/votes`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action, visitorId })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            likes = data.votes.likes;
+            dislikes = data.votes.dislikes;
+            userVote = data.userVote;
+            localStorage.setItem('natv_user_vote', userVote || '');
+          }
+        } catch (error) {
+          console.warn('Erro ao votar:', error);
+          // Fallback local
+          if (userVote === type) {
+            if (type === 'like') likes--;
+            else dislikes--;
+            userVote = null;
+          } else {
+            if (userVote === 'like') likes--;
+            if (userVote === 'dislike') dislikes--;
+            if (type === 'like') likes++;
+            else dislikes++;
+            userVote = type;
+          }
+          localStorage.setItem('natv_user_vote', userVote || '');
+          localStorage.setItem('natv_likes', likes);
+          localStorage.setItem('natv_dislikes', dislikes);
+        }
+
+        isLoading = false;
+        updateLikeUI();
+      }
+
+      // Fetch comments from backend
+      async function fetchComments() {
+        try {
+          const response = await fetch(`${API_BASE}/comments`);
+          if (response.ok) {
+            comments = await response.json();
+            localStorage.setItem('natv_comments', JSON.stringify(comments));
+            renderComments();
+          } else {
+            throw new Error('Falha ao carregar comentários');
+          }
+        } catch (error) {
+          console.warn('Erro ao buscar comentários:', error);
+          // Fallback para localStorage
+          comments = JSON.parse(localStorage.getItem('natv_comments') || '[]');
+          renderComments();
+        }
+      }
+
+      // Render comments
+      function renderComments() {
+        if (comments.length === 0) {
+          noComments.style.display = 'block';
+          const existingComments = commentsList.querySelectorAll('.comment-card');
+          existingComments.forEach(el => el.remove());
+          return;
+        }
+
+        noComments.style.display = 'none';
+        
+        // Clear existing comments
+        const existingComments = commentsList.querySelectorAll('.comment-card');
+        existingComments.forEach(el => el.remove());
+
+        comments.forEach(comment => {
+          const isLiked = likedComments.includes(comment.id);
+          const commentEl = document.createElement('article');
+          commentEl.className = 'comment-card';
+          commentEl.innerHTML = `
+            <div class="comment-header">
+              <div class="comment-avatar">
+                <div class="avatar-icon">${comment.avatar}</div>
+                <div>
+                  <div class="comment-name">${escapeHtml(comment.name)}</div>
+                  <div class="comment-date">${formatDate(comment.date)}</div>
+                </div>
+              </div>
+            </div>
+            <p class="comment-text">${escapeHtml(comment.text)}</p>
+            <div class="comment-actions">
+              <button class="comment-like-btn ${isLiked ? 'active' : ''}" data-id="${comment.id}" aria-label="Curtir comentário">
+                <span>👍</span>
+                <span>${comment.likes || 0}</span>
+              </button>
+            </div>
+          `;
+          commentsList.appendChild(commentEl);
+        });
+
+        // Add event listeners for comment likes
+        document.querySelectorAll('.comment-like-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            handleCommentLike(id);
+          });
+        });
+      }
+
+      // Handle comment like
+      async function handleCommentLike(commentId) {
+        try {
+          const response = await fetch(`${API_BASE}/comments`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'like', commentId, visitorId })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            comments = data.comments;
+            localStorage.setItem('natv_comments', JSON.stringify(comments));
+            
+            // Toggle local liked state
+            const index = likedComments.indexOf(commentId);
+            if (index === -1) {
+              likedComments.push(commentId);
+            } else {
+              likedComments.splice(index, 1);
+            }
+            localStorage.setItem('natv_liked_comments', JSON.stringify(likedComments));
+            
+            renderComments();
+          }
+        } catch (error) {
+          console.warn('Erro ao curtir comentário:', error);
+        }
+      }
+
+      // Add new comment
+      async function addComment() {
+        const text = commentInput.value.trim();
+        if (!text || text.length < 3) {
+          alert('Por favor, escreva um comentário com pelo menos 3 caracteres.');
+          return;
+        }
+
+        if (text.length > 500) {
+          alert('O comentário deve ter no máximo 500 caracteres.');
+          return;
+        }
+
+        submitComment.disabled = true;
+        submitComment.textContent = 'Enviando...';
+
+        try {
+          const response = await fetch(`${API_BASE}/comments`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'add', text, visitorId })
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            comments = data.comments;
+            localStorage.setItem('natv_comments', JSON.stringify(comments));
+            commentInput.value = '';
+            renderComments();
+          } else {
+            const error = await response.json();
+            alert(error.error || 'Erro ao enviar comentário');
+          }
+        } catch (error) {
+          console.warn('Erro ao adicionar comentário:', error);
+          alert('Erro ao enviar comentário. Verifique se o site foi publicado como Web Service no Render e tente novamente.');
+        }
+
+        submitComment.disabled = false;
+        submitComment.textContent = 'Enviar Comentário';
+      }
+
+      // Event Listeners
+      likeBtn.addEventListener('click', () => handleVote('like'));
+      dislikeBtn.addEventListener('click', () => handleVote('dislike'));
+      submitComment.addEventListener('click', addComment);
+      commentInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.ctrlKey) {
+          addComment();
+        }
+      });
+
+      // Initialize - Fetch data from backend
+      fetchVotes();
+      fetchComments();
+    })();
+  </script>
+</body>
+</html>

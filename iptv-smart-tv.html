@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-987590909"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-987590909');
+    gtag('config', 'G-4L4PL12CWG');
+
+    const GOOGLE_ADS_WHATSAPP_SEND_TO = 'AW-987590909/yWZtCNz51ZccEP3h9dYD';
+
+    function normalizeWhatsAppUrl(url) {
+      try {
+        return new URL(url, window.location.origin).toString();
+      } catch {
+        return String(url || '');
+      }
+    }
+
+    function inferWhatsAppPlan(url) {
+      const value = decodeURIComponent(String(url || '')).toLowerCase();
+      if (value.includes('básico') || value.includes('basico')) return 'basico';
+      if (value.includes('completo')) return 'completo';
+      if (value.includes('trimestral')) return 'trimestral';
+      if (value.includes('semestral')) return 'semestral';
+      if (value.includes('anual')) return 'anual';
+      if (value.includes('teste grátis') || value.includes('teste gratis')) return 'teste_gratis';
+      if (value.includes('indicado')) return 'indicacao';
+      return 'geral';
+    }
+
+    function gtag_report_conversion(url, meta = {}) {
+      const targetUrl = normalizeWhatsAppUrl(url);
+      const plan = meta.plan || inferWhatsAppPlan(targetUrl);
+      const source = meta.source || 'site';
+      const locationName = meta.location || window.location.pathname || '/';
+      let opened = false;
+
+      const openTarget = () => {
+        if (opened || !targetUrl) return;
+        opened = true;
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+      };
+
+      gtag('event', 'generate_lead', {
+        currency: 'BRL',
+        value: 1,
+        method: 'WhatsApp',
+        event_category: 'engagement',
+        event_label: plan,
+        plan_name: plan,
+        contact_channel: 'whatsapp',
+        page_location: window.location.href,
+        page_path: locationName,
+        send_to: 'G-4L4PL12CWG'
+      });
+
+      gtag('event', 'click', {
+        event_category: 'whatsapp',
+        event_label: targetUrl,
+        link_url: targetUrl,
+        outbound: true,
+        plan_name: plan,
+        page_path: locationName,
+        source: source,
+        send_to: 'G-4L4PL12CWG'
+      });
+
+      gtag('event', 'conversion', {
+        'send_to': GOOGLE_ADS_WHATSAPP_SEND_TO,
+        'event_callback': openTarget
+      });
+
+      setTimeout(openTarget, 450);
+      return false;
+    }
+
+    function trackWhatsAppClick(url, meta = {}) {
+      return gtag_report_conversion(url, meta);
+    }
+  </script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>IPTV para Smart TV | Samsung, LG e mais | NaTV de Sua Casa</title>
+<meta name="description" content="TV por internet para Smart TV com canais ao vivo, filmes e séries. Compatível com Samsung, LG, TV Box, Roku, Fire Stick e celular."/>
+<link rel="canonical" href="https://natvdesuacasa.casa/iptv-smart-tv.html"/>
+<link rel="manifest" href="/manifest.json"/>
+<link rel="icon" href="/icons/icon-192x192.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{--bg:#0d0d26;--card:#111827;--text:#e6eef6;--muted:#9ca3af;--accent:#00bcd4;--whats:#25d366;--max:1080px}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(180deg,#0d0d26 0%,#070814 100%);color:var(--text);line-height:1.6}
+    .wrap{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+    header,section,footer{padding:24px 0}.hero{padding:42px 0}
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    h1,h2,h3{line-height:1.2} h1{font-size:2rem;margin:0 0 12px;color:#fff} h2{color:var(--accent);margin:0 0 12px}
+    p{margin:0 0 14px}.muted{color:var(--muted)}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.btn{display:inline-block;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn-primary{background:var(--whats);color:#fff}.btn-secondary{background:var(--accent);color:#001018}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    ul{padding-left:20px} nav a{color:#fff;text-decoration:none} footer{border-top:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:.95rem}
+  </style>
+
+</head>
+<body>
+<header><div class="wrap"><nav><a href="/index.html">← Voltar para a página inicial</a></nav></div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="card"><h1>IPTV para Smart TV, TV Box e celular</h1><p>A NaTV de Sua Casa funciona em diversos aparelhos, com aplicativos compatíveis para Smart TV, TV Box, Roku, Fire Stick e celular.</p><p class="muted">Peça o teste grátis, receba orientação de instalação e escolha o plano ideal sem mudar seus valores atuais.</p><div class="btns"><a class="btn btn-primary" href="https://wa.me/5583998180866?text=Olá, quero pedir meu teste grátis da NaTV de Sua Casa" onclick="return trackWhatsAppClick(this.href)" target="_blank" rel="noopener noreferrer">Pedir teste grátis</a><a class="btn btn-secondary" href="/index.html#planos-section">Ver planos</a></div></div></div></section>
+<section><div class="wrap"><div class="grid"><div class="card"><h2>O que você encontra</h2><ul><li>Canais ao vivo</li><li>Filmes e séries</li><li>Esportes e infantil</li><li>Pagamento por Pix e cartão</li><li>Atendimento no WhatsApp</li></ul></div><div class="card"><h2>Compatibilidade</h2><ul><li>Smart TV</li><li>TV Box</li><li>Celular</li><li>Roku</li><li>Fire Stick</li></ul></div></div></div></section>
+<section><div class="wrap"><h2>Planos atuais da NaTV de Sua Casa</h2>
+<div class="grid">
+  <div class="card"><h3>Plano Básico</h3><p>R$30,00/mês</p><p class="muted">Sem filme adulto e novela.</p></div>
+  <div class="card"><h3>Plano Completo</h3><p>R$35,00/mês</p><p class="muted">Inclui todo conteúdo.</p></div>
+  <div class="card"><h3>Plano Trimestral</h3><p>R$90,00</p><p class="muted">Plano completo por 3 meses.</p></div>
+  <div class="card"><h3>Plano Semestral</h3><p>R$150,00</p><p class="muted">Plano completo por 6 meses.</p></div>
+  <div class="card"><h3>Plano Anual</h3><p>R$270,00</p><p class="muted">Plano completo por 12 meses.</p></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">NaTV de Sua Casa • WhatsApp: (83) 99818-0866</div></footer>
+</body>
+</html>
